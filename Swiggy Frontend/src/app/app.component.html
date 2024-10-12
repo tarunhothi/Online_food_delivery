@@ -1,0 +1,34 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Swiggy</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a class="nav-link" routerLink="/signup">SignUp</a> -->
+        <!-- <a class="nav-link" routerLink="/login" *ngIf="(homeService.isLoggedIn) | async">Login</a> -->
+        <!-- <a class="nav-link" routerLink="/food" *ngIf="homeService.isLoggedIn | async">Foods</a> -->
+        <a class="nav-link" routerLink="/food">Foods</a>
+        <!-- <a class="nav-link" routerLink="/restaurant">Restaurants</a> -->
+        <a class="nav-link" routerLink="/cart">Cart</a>
+        <a class="nav-link" routerLink="/contact">Contact</a>
+        <a class="nav-link" routerLink="/about">About</a>
+        <a class="nav-link" style="color: red" routerLink="/profile">Profile</a>
+        <a class="nav-link" (click)="logout()" routerLink="/logout" *ngIf="homeService.isLoggedIn | async">Logout</a>
+        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+      </div>
+    </div>
+  </div>
+</nav>
+<footer class="fixed-bottom">&#169;2022 Swiggy India, Inc. All rights reserved.</footer>
+<!-- <img src="./../assets/swiggy background.png"> -->
+<router-outlet></router-outlet>

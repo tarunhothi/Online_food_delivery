@@ -1,0 +1,76 @@
+<div class="divm">
+    <div class="formDiv">
+        <form [formGroup]="registrationForm" (ngSubmit)="registration()">
+          <div class="mb-3">
+            <label for="name" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="enter first name"
+              name="name"
+              formControlName="name"
+            />
+            <span>
+              <small  *ngIf="name && name.invalid && name.touched">First name should be minimum 3 character.</small>
+            </span>
+          </div>
+      
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="enter email"
+              name="email"
+              formControlName="email"
+            />
+            <span>
+              <small *ngIf="email && email.invalid && email.touched">Enter a valid email address.</small>
+            </span>
+          </div>
+      
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pwd"
+              placeholder="enter password"
+              name="password"
+              formControlName="password"
+            />
+            <span>
+              <small *ngIf="password && password.invalid && password.touched">Password is required.</small>
+            </span>
+          </div>
+    
+          <div class="mb-3">
+            <label for="mobileNo" class="form-label">Phone number</label>
+            <input
+              type="tel"
+              pattern="(7|8|9)\d{9}"
+              class="form-control"
+              id="mobileNo"
+              placeholder="enter mobile number"
+              name="mobileNo"
+              formControlName="mobileNo"
+            />
+            <span>
+              <small *ngIf="mobileNo && mobileNo.invalid && mobileNo.touched">Enter valid phone no.</small>
+            </span>
+          </div>
+          <br />
+          <button
+            type="submit"
+            class="btn btn-primary form-control"
+            [disabled]="registrationForm.invalid"
+          >
+            Register
+          </button>
+          <a routerLink="/login" style="color: red; text-decoration: none;">Already registered? Login here.</a>
+        </form>
+      </div>
+      
+</div>

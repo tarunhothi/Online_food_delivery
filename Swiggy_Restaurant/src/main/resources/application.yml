@@ -1,0 +1,17 @@
+server:
+  port: 8082
+eureka:
+ client:
+   service-url:
+     defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+      name: Swiggy_Restaurant
+  data:
+    mongodb:
+      uri: mongodb+srv://swiggy:klaus683@swiggy.li8lf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+data:
+  exception:
+    restaurantExists: Restaurant Already Exists!
+    idNotFound: Restaurant not found.
+    noRecords: No Records Found.

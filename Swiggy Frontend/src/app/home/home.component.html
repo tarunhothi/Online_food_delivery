@@ -1,0 +1,46 @@
+<div class="divm">
+  <div class="formDiv">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="enter your email"
+          name="email"
+          formControlName="email"
+        />
+        <span>
+            <small *ngIf="email && email.invalid && email.touched">Enter a valid email address.</small>
+        </span>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="enter your password"
+          name="password"
+          formControlName="password"
+        />
+        <span>
+            <small *ngIf="password && password.invalid && password.touched">Enter a valid password.</small>
+        </span>
+      </div>
+      <br />
+      <button
+        type="submit"
+        class="btn btn-primary form-control"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+      <br>
+      <a routerLink="/signup" style="color: red; text-decoration: none;">New to swiggy? Register here.</a>
+    </form>
+  </div>
+</div>
+
